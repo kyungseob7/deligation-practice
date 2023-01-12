@@ -22,6 +22,28 @@ const data = [
   }
 ]
 
+const swiper = new Swiper('.swiper',{
+
+  autoplay: true,
+  loop: true,
+  speed: 2000,
+  parallax: true,
+  pagination: {
+    el: '.pagination',
+    clickable:true,
+    bulletClass:'bullet',
+    bulletActiveClass:'is-active',
+    renderBullet: function (index,className){
+      return /* html */ `
+        <span class="${className}">
+          <img src="./assets/part01/${data[index].src}" alt="${data[index].alt}" />
+        </span>
+      `
+    }
+  }
+
+})
+
 
 
 

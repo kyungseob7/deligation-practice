@@ -25,5 +25,39 @@ const data = [
 
 
 
+/* $('.navigation > li').click(function(e){
+  e.preventDefault();
+
+  let index = $(this).index()
+
+  $('.navigation > li').removeClass('is-active');
+
+  $(this).addClass('is-active');
+
+  $('.visual img').attr({
+    'src',`./assets/part01/${data[index].src}`,
+    'alt': data[index].alt
+  })
+
+
+
+}); */
+
+$('.navigation').on('click','li',function(e){
+
+  e.preventDefault();
+  
+  $('.navigation > li').removeClass('is-active');
+  let index = $(this).attr('data-index');
+
+  $('.visual img').attr({
+    'src': `./assets/part01/${data[index-1].src}`,
+    'alt': data[index-1].alt
+
+
+  })
+
+})
+
 
 
